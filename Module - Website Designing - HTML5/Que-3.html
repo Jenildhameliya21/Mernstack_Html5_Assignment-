@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <canvas id="myCanvas" width="500" height="250" style="border: 2px solid gold; display: block; margin: 20px auto;"></canvas>
+    
+        <script>
+            const canvas = document.getElementById('myCanvas');
+            const ctx = canvas.getContext('2d');
+    
+            const gradient1 = ctx.createLinearGradient(50, 50, 150, 150);
+            gradient1.addColorStop(0, 'red');
+            gradient1.addColorStop(1, 'orange');
+            ctx.fillStyle = gradient1;
+            ctx.fillRect(50, 50, 100, 100);
+    
+            const gradient2 = ctx.createLinearGradient(200, 50, 300, 150);
+            gradient2.addColorStop(0, 'yellow');
+            gradient2.addColorStop(0.5, 'green');
+            gradient2.addColorStop(1, 'blue');
+            ctx.beginPath();
+            ctx.arc(250, 100, 50, 0, Math.PI * 2);
+            ctx.fillStyle = gradient2;
+            ctx.fill();
+            ctx.closePath();
+    
+            ctx.fillStyle = 'orange';
+            ctx.fillRect(350, 75, 100, 50);
+        </script>
+</body>
+</html>
